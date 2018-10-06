@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA3", "SHA3\SHA3.csproj", "{B6BC16AD-0349-4BC7-BE93-9AF108C10EF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "SHA3\GUI.csproj", "{B6BC16AD-0349-4BC7-BE93-9AF108C10EF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {418537CF-08F0-4C12-A3CE-F5AE96DAA843}
+		SolutionGuid = {8D573B09-43A1-4888-A4E6-059C19D4097E}
 	EndGlobalSection
 EndGlobal

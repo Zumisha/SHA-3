@@ -1,4 +1,4 @@
-﻿namespace SHA3
+﻿namespace GUI
 {
     partial class AboutBox
     {

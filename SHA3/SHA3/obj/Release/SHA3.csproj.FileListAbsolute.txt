@@ -36,3 +36,16 @@ D:\GitHub\SHA-3\SHA3\SHA3\obj\Release\SHA3.csproj.CoreCompileInputs.cache
 D:\GitHub\SHA-3\SHA3\SHA3\obj\Release\SHA3.exe
 D:\GitHub\SHA-3\SHA3\SHA3\obj\Release\SHA3.pdb
 D:\GitHub\SHA-3\SHA3\SHA3\obj\Release\SHA3.csprojResolveAssemblyReference.cache
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\bin\Release\SHA3.exe.config
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\bin\Release\SHA3.exe
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\bin\Release\SHA3.pdb
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.csprojAssemblyReference.cache
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.AboutBox.resources
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.KeyInput.resources
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.KeySet.resources
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.Main.resources
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.Properties.Resources.resources
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.csproj.GenerateResource.cache
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.csproj.CoreCompileInputs.cache
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.exe
+C:\Users\User\YandexDisk\Институт\7 Cеместр\ЗД\КП\SHA3\SHA3\obj\Release\SHA3.pdb
