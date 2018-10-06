@@ -1,15 +1,3 @@
 SHA3/.vs/
-SHA3/SHA3/bin/*
-SHA3/SHA3/obj/*
-SHA3/.vs/SHA3/v15/.suo
-SHA3/SHA3/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-SHA3/SHA3/obj/Debug/SHA3.exe
-SHA3/SHA3/obj/Debug/SHA3.pdb
-SHA3/SHA3/obj/Release/DesignTimeResolveAssemblyReferences.cache
-SHA3/SHA3/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
-SHA3/SHA3/obj/Release/SHA3.csproj.FileListAbsolute.txt
-SHA3/SHA3/obj/Release/SHA3.csproj.GenerateResource.Cache
-SHA3/SHA3/obj/Release/SHA3.exe
-SHA3/SHA3/obj/Release/SHA3.pdb
-SHA3/SHA3/obj/Release/SHA3.pdb
-SHA3/SHA3/obj/Release/SHA3.exe
+SHA3/SHA3/bin/
+SHA3/SHA3/obj/
