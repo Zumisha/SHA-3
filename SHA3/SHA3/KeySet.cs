@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SHA3
+namespace GUI
 {
     public partial class KeySet : Form
     {
-        UInt16 min, max;
+        private UInt16 min, max;
         public KeySet()
         {
             InitializeComponent();

@@ -3,18 +3,19 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using SHA3;
 
-namespace SHA3
+namespace GUI
 {
     [Serializable]
     public struct KeyRestrict
     {
-        UInt16 min_length;
-        UInt16 max_length;
-        bool numbers;
-        bool lowercase;
-        bool capitals;
-        bool special_chars;
+        private UInt16 min_length;
+        private UInt16 max_length;
+        private bool numbers;
+        private bool lowercase;
+        private bool capitals;
+        private bool special_chars;
         public UInt16 Min_length { get => min_length; set => min_length = value; }
         public UInt16 Max_length { get => max_length; set => max_length = value; }
         public bool Numbers { get => numbers; set => numbers = value; }
@@ -39,8 +40,6 @@ namespace SHA3
         private string choosePath;
         private const string settingsPath = ".\\settings";
         private static string hashFunction;
-        private double reference_test_time = 70025;
-        private double performance_test_time;
 
         public Main()
         {
@@ -48,10 +47,6 @@ namespace SHA3
             FileMod(false);
             toolStripComboBox_Hash_Func_Choose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             toolStripComboBox_Hash_Func_Choose.SelectedItem = toolStripComboBox_Hash_Func_Choose.Items[0];
-            long start = DateTime.Now.Ticks;
-            SHA3.SHA3_512("");
-            long end = DateTime.Now.Ticks;
-            performance_test_time = end - start;
             if (File.Exists(settingsPath))
                 try
                 {
@@ -339,94 +334,35 @@ namespace SHA3
             
         }
 
-        public static string Get_SHA3_Hash(string Text, bool Is_HEX_Input)
+        public static HEX Get_SHA3_Hash(string Text, bool Is_HEX_Input)
         {
-            if (!Is_HEX_Input)
-                switch (hashFunction)
-                {
-                    case "SHA3-512":
-                        return SHA3.SHA3_512(Text);
-                    case "SHA3-384":
-                        return SHA3.SHA3_384(Text);
-                    case "SHA3-256":
-                        return SHA3.SHA3_256(Text);
-                    case "SHA3-224":
-                        return SHA3.SHA3_224(Text);
-                }
+            string temp = hashFunction.Substring(hashFunction.Length - 3, 3);
+            UInt16 security = Convert.ToUInt16(temp);
+            if (Is_HEX_Input)
+                return Sha3.SHA3(new HEX(Text), security);
             else
-                switch (hashFunction)
-                {
-                    case "SHA3-512":
-                        return SHA3.SHA3_512_HEX(Text);
-                    case "SHA3-384":
-                        return SHA3.SHA3_384_HEX(Text);
-                    case "SHA3-256":
-                        return SHA3.SHA3_256_HEX(Text);
-                    case "SHA3-224":
-                        return SHA3.SHA3_224_HEX(Text);
-                }
-            return "Error in switching.";
+                return Sha3.SHA3(Text, security);
         }
 
-        public static string Get_HMAC_SHA3_Hash(string Text, string Key, bool Is_HEX_Input)
+        public static HEX Get_SHA3_Hash(FileStream fs)
         {
-            if (!Is_HEX_Input)
-                switch (hashFunction)
-                {
-                    case "SHA3-512":
-                        return SHA3.SHA3_HMAC_512(Text, Key);
-                    case "SHA3-384":
-                        return SHA3.SHA3_HMAC_384(Text, Key);
-                    case "SHA3-256":
-                        return SHA3.SHA3_HMAC_256(Text, Key);
-                    case "SHA3-224":
-                        return SHA3.SHA3_HMAC_224(Text, Key);
-                }
+            UInt16 security = Convert.ToUInt16(hashFunction.Substring(hashFunction.Length - 3, 3));
+            return Sha3.SHA3(fs, security);
+        }
+
+        public static HEX Get_HMAC_SHA3_Hash(string Text, string Key, bool Is_HEX_Input)
+        {
+            UInt16 security = Convert.ToUInt16(hashFunction.Substring(hashFunction.Length - 3, 3));
+            if (Is_HEX_Input)
+                return Sha3.SHA3(new HEX(Text), security, Key);
             else
-                switch (hashFunction)
-                {
-                    case "SHA3-512":
-                        return SHA3.SHA3_HMAC_512_HEX(Text, Key);
-                    case "SHA3-384":
-                        return SHA3.SHA3_HMAC_384_HEX(Text, Key);
-                    case "SHA3-256":
-                        return SHA3.SHA3_HMAC_256_HEX(Text, Key);
-                    case "SHA3-224":
-                        return SHA3.SHA3_HMAC_224_HEX(Text, Key);
-                }
-            return "Error in switching.";
+                return Sha3.SHA3(Text, security, Key);
         }
 
-        public static string Get_SHA3_Hash(FileStream fs)
+        public static HEX Get_HMAC_SHA3_Hash(FileStream fs, string Key)
         {
-            switch (hashFunction)
-            {
-                case "SHA3-512":
-                    return SHA3.SHA3_512(fs);
-                case "SHA3-384":
-                    return SHA3.SHA3_384(fs);
-                case "SHA3-256":
-                    return SHA3.SHA3_256(fs);
-                case "SHA3-224":
-                    return SHA3.SHA3_224(fs);
-            }
-            return "Error in switching.";
-        }
-
-        public static string Get_HMAC_SHA3_Hash(FileStream fs, string Key)
-        {
-            switch (hashFunction)
-            {
-                case "SHA3-512":
-                    return SHA3.SHA3_HMAC_512(fs, Key);
-                case "SHA3-384":
-                    return SHA3.SHA3_HMAC_384(fs, Key);
-                case "SHA3-256":
-                    return SHA3.SHA3_HMAC_256(fs, Key);
-                case "SHA3-224":
-                    return SHA3.SHA3_HMAC_224(fs, Key);
-            }
-            return "Error in switching.";
+            UInt16 security = Convert.ToUInt16(hashFunction.Substring(hashFunction.Length - 3, 3));
+            return Sha3.SHA3(fs, security, Key);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)

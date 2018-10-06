@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SHA3
+namespace GUI
 {
     public partial class KeyInput : Form
     {
-        string s, l;
+        private string s, l;
         public KeyInput()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace SHA3
             {
                 if (Pass_Key_textBox.Text == textBox_confirm.Text)
                 {
-                    Main.key = Main.Get_SHA3_Hash(Pass_Key_textBox.Text, false);
+                    Main.key = Encoding.UTF8.GetString(Main.Get_SHA3_Hash(Pass_Key_textBox.Text, false).ToByteArray());
                     Close();
                 }
                 else
